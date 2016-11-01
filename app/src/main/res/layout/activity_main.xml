@@ -53,7 +53,8 @@
                 android:dividerHeight="1dp"
                 android:background="#ffffff"
                 android:layout_gravity="start"
-                android:groupIndicator="@null"  />
+                android:groupIndicator="@null"
+                android:listSelector="@drawable/list"/>
 
 
     </android.support.v4.widget.DrawerLayout>

@@ -7,15 +7,16 @@ import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.*;
 import android.widget.ExpandableListView;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import com.attribe.lachine.adapters.DrawerExpandableListAdapter;
 import com.attribe.lachine.fragments.MenuFragment;
+import com.attribe.lachine.fragments.WishItems;
 import com.attribe.lachine.models.Category;
 import com.attribe.lachine.models.DrawerGroupItems;
 
@@ -40,7 +41,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initViews();
         getCategories();
+        wishItemTransaction();
+//        wish1();
+//       wish();
         menuItemTransaction();
+
+
+        ImageButton imageButton = (ImageButton) toolbar.findViewById(R.id.navBtn);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawerLayout.openDrawer(Gravity.LEFT);
+
+            }
+        });
+
+
     }
 
     @Override
@@ -57,13 +74,23 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
+
+
+    //noinspection SimplifiableIfStatement
+//        if (id == R.id.shareButton) {
+//            if(mDrawerLayout.isDrawerOpen(Gravity.LEFT)){
+//                mDrawerLayout.closeDrawer(Gravity.LEFT);
+//            }
+//            else{
+//                mDrawerLayout.openDrawer(Gravity.LEFT);
+//            }
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     private void initViews() {
 
@@ -81,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 //        View listHeaderView = inflater.inflate(R.layout.drawer_header,null, false);
 //        mDrawerList.addHeaderView(listHeaderView,null,false);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 
     }
@@ -104,9 +131,18 @@ public class MainActivity extends AppCompatActivity {
 
         drawerGroupItems= new ArrayList<DrawerGroupItems>();
 
+        ArrayList<String> WishList= new ArrayList<String>();
+
+        WishList.add("My WishList");
+
+        DrawerGroupItems WishListItem = new DrawerGroupItems("WishList",WishList,null);
+        drawerGroupItems.add(WishListItem);
+
+
         ArrayList<String> childListOrder= new ArrayList<String>();
         childListOrder.add("Online Order");
         childListOrder.add("My reservations");
+
         DrawerGroupItems drawerGroupOrder = new DrawerGroupItems("My Order",childListOrder,null);
         drawerGroupItems.add(drawerGroupOrder);
 
@@ -121,17 +157,42 @@ public class MainActivity extends AppCompatActivity {
         expandableListAdapter = new DrawerExpandableListAdapter(MainActivity.this,drawerGroupItems);
         mDrawerList.setAdapter(expandableListAdapter);
     }
+//   public void wish(){
+//        mDrawerList.setOnChildClickListener(new ChildItemListner());
+//    }
 
     private void menuItemTransaction() {
 
         mDrawerList.setOnChildClickListener(new ChildItemListner());
     }
 
+    public void wishItemTransaction() {
+        mDrawerList.setOnChildClickListener(new ChildItemListner());
+    }
+//                public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+//                    if(groupPosition == 0) {
+//                        wishfragment();
+//                        return true;
+//                    } else
+//                        return false;
+//                }
+//            });        }
+//
+
     private class ChildItemListner implements ExpandableListView.OnChildClickListener {
         @Override
         public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 
-            if(groupPosition == 2) {
+            if(groupPosition==0)
+            {
+                wishfragment();
+                getSupportActionBar().setTitle("My WishList");
+
+            }
+
+            if(groupPosition == 3) {
+                v.setBackgroundResource(R.drawable.list);
+                v.setSelected(true);
                 category = actualCategories.get(childPosition);
                 send_CategoryId(category.getId());
                 setDrawerclosed();
@@ -140,6 +201,14 @@ public class MainActivity extends AppCompatActivity {
 
             return true;
         }
+
+    }
+    private void wishfragment()
+    {
+        WishItems menufragment = new WishItems();
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.frame_container, menufragment).commit();
+        mDrawerLayout.closeDrawer(mDrawerList);
     }
 
     private void send_CategoryId(int cat_id) {

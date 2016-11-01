@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+
+
+
+
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+    <!--android:background="@drawable/kj_bg"-->
+    <!--android:background="@drawable/kj_bg"-->
+    <!--android:background="#ffffff"-->
+
+    <!--<include android:id="@+id/toolbar_details_item_screen"-->
+             <!--layout="@layout/tool_bar"-->
+
+    <!--&gt;</include>-->
+
+    <LinearLayout
+            android:id="@+id/mainlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="4"
+            >
+        <!--android:background="@color/darkBackground_black"-->
+        <!--android:layout_below="@+id/toolbar_details_item_screen"-->
+        <!--item image layout-->
+        <!--<FrameLayout-->
+                <!--android:id="@+id/layout_item_image"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="2dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_weight="1"-->
+                   <!--android:background="#ffffff"-->
+        <!--&gt;-->
+            <ProgressBar
+                    android:id="@+id/progressBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:indeterminate="false"
+                    android:visibility="invisible"
+                    android:progress="2"
+            android:layout_gravity="center"/>
+
+            <!--style="@android:style/Widget.ProgressBar.Large"-->
+            <!--#696969-->
+        <ImageView
+                    android:id="@+id/itemFullView"
+                    android:layout_width="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="-30dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/food"/>
+        <include
+                layout="@layout/custom_picker"
+                android:id="@+id/myquantity_picker"
+                android:layout_width="174dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-230dp"
+                android:layout_gravity="right"/>
+        <!--android:background="@drawable/kbj"-->
+        <!--</FrameLayout>-->
+        <!-- item short_desc and item_price  layout-->
+        <!--order button and details item layout-->
+        <LinearLayout
+
+                android:id="@+id/layout_details_orderbutton"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:layout_weight="2"
+                android:weightSum="2">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/textView_itemname"
+                    android:text="pizza"
+                    android:textAllCaps="true"
+                    android:textSize="18dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/textView_description"
+                    android:text="Bht umdah khanaaa ha "
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:textStyle="italic"
+                    android:layout_height="wrap_content"/>
+
+
+            <!--<RelativeLayout android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="0.25"-->
+            <!--&gt;</RelativeLayout>-->
+
+
+            <!--custom picker here-->
+
+            <!--Existing Quantity shown-->
+            <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="15dp"-->
+                    <!--android:layout_weight="0.12">-->
+                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:text="Existing Quantity"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;android:id="@+id/alreaty_itemQuantity_txtview"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textAppearance="?android:attr/textAppearanceMedium"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textColor="@color/greeen_color"&ndash;&gt;-->
+                      <!--&lt;!&ndash;/>&ndash;&gt;-->
+
+                <!--&lt;!&ndash;total price according to quantity&ndash;&gt;-->
+                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/item_quantity_already"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_gravity=""&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textColor="@color/greeen_color"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textAppearance="?android:attr/textAppearanceMedium"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
+
+                <!--&lt;!&ndash;android:text="2"/>&ndash;&gt;-->
+
+            <!--</RelativeLayout>-->
+
+
+
+
+            <!--&lt;!&ndash; Total price according to quantity &ndash;&gt;-->
+            <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+
+                    <!--android:layout_weight="0.12">-->
+                <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Total Price"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:layout_margin="15dp"-->
+                        <!--android:id="@+id/total_price_txtview"-->
+                        <!--android:gravity="center"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                        <!--android:textColor="@color/black_text_color"/>-->
+
+                <!--&lt;!&ndash;total price according to quantity&ndash;&gt;-->
+                <!--<TextView-->
+                        <!--android:id="@+id/total_price"-->
+                        <!--android:layout_gravity=""-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:gravity="center"-->
+                        <!--android:textStyle="bold"-->
+                        <!--android:textColor="@color/black_text_color"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_alignParentEnd="true"-->
+                        <!--android:layout_margin="15dp" />-->
+
+            <!--</RelativeLayout>-->
+
+
+
+
+
+            <!--</LinearLayout>-->
+
+            <!--android:drawableLeft="@mipmap/ic_arrow"-->
+
+        </LinearLayout>
+        <!--F34545-->
+    </LinearLayout>
+</RelativeLayout>
+

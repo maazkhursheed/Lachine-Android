@@ -56,7 +56,7 @@ public class MenuFragment extends Fragment {
 
         RestClient.getAdapter().getMenuItems(cat_id, new Callback<ArrayList<MenusItem>>() {
             @Override
-            public void success(ArrayList<MenusItem> menusItems, Response response) {
+            public void success(final ArrayList<MenusItem> menusItems, Response response) {
 
                 if (!menusItems.isEmpty()) {
                     menuAdapter = new MenuAdapter(getActivity().getApplicationContext(), menusItems);
@@ -64,6 +64,21 @@ public class MenuFragment extends Fragment {
                     recyclerView.setLayoutManager(mLayoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setAdapter(menuAdapter);
+
+                    menuAdapter.SetOnItemClickListner(new MenuAdapter.OnItemClickListner() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+
+                            Bundle data = new Bundle();
+                            MenusItem item = menusItems.get(position);
+                            data.putSerializable("Item", (Serializable) item);
+                            ItemDetailFragment detailsFragment = new ItemDetailFragment();
+                            detailsFragment.setArguments(data);
+                            FragmentManager fragmentManager = getFragmentManager();
+                            fragmentManager.beginTransaction().replace(R.id.frame_container, detailsFragment).commit();
+
+                        }
+                    });
 
                 } else {
                     Toast.makeText(getActivity(), "No Menu Found of this category", Toast.LENGTH_SHORT).show();

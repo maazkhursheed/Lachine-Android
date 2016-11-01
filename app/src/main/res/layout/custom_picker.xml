@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:weightSum="2"
+       android:gravity="center"
+        android:layout_margin="25dp"
+
+        android:id="@+id/main_pickerlayout"
+        >
+    <!--android:layout_margin="25dp"-->
+
+
+    <!--android:textColor="#FF0000"-->
+    <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"-->
+    <!--android:background="#ffffff"-->
+    <!--android:background="#FF0000"-->
+
+
+
+
+<!--</LinearLayout>-->
+
+<LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="262dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="5dp" android:layout_weight="1.81" android:weightSum="1">
+
+    <TextView
+            android:id="@+id/add_txtview"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="+"
+
+            android:gravity="center_horizontal"
+            android:background="@drawable/round_corner"
+            android:textColor="@color/counter_text_color"
+            android:padding="2dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:textStyle="normal"
+            android:textSize="25dp" android:layout_gravity="center_horizontal"/>
+    <TextView
+            android:id="@+id/itemquantity_txtview"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginRight="75dp"
+            android:background="@drawable/round_corner"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/darker_gray"
+
+            android:layout_weight="0.11"/>
+    <TextView
+            android:id="@+id/subtract_txtview"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="-"
+
+            android:gravity="center_horizontal"
+
+            android:background="@drawable/round_corner"
+            android:textColor="@color/counter_text_color"
+
+            android:padding="2dp"
+        android:clickable="true"
+       android:textStyle="bold"
+       android:textSize="25dp"
+
+    />
+
+</LinearLayout>
+
+
+    <!--android:background="@android:color/holo_green_dark"-->
+
+<!--</LinearLayout>-->
+
+</LinearLayout>
+

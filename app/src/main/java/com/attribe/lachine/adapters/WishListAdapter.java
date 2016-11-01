@@ -15,15 +15,16 @@ import com.attribe.lachine.utils.WishList;
 import java.util.List;
 
 /**
- * Created by Maaz on 10/18/2016.
+ * Created by Talha Ghaffar on 10/27/2016.
  */
-public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder>  {
+
+public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.MyViewHolder> {
 
     Context mContext;
     private List<MenusItem> menusList;
     OnItemClickListner menuItemClickListner;
 
-    public MenuAdapter(Context mContext, List<MenusItem> menusList) {
+    public WishListAdapter(Context mContext, List<MenusItem> menusList) {
         this.mContext = mContext;
         this.menusList = menusList;
     }
@@ -62,7 +63,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_menu_row, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_wishlist, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -85,9 +86,9 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MyViewHolder> 
         holder.item_fvrt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WishList wish = new WishList(mContext);
-                wish.Additems(menus);
-
+                WishList remove = new WishList(mContext);
+                remove.RemoveItems(menus);
+                notifyDataSetChanged();
             }});
 
     }

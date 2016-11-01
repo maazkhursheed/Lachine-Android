@@ -18,6 +18,7 @@ public class MenusItem implements Serializable {
     private String updatedAt;
     private String uuid;
     private List<Image> images = new ArrayList<Image>();
+    private int desiredQuantity;
 
     public int getId() {
         return id;
@@ -89,6 +90,14 @@ public class MenusItem implements Serializable {
 
     public void setImages(List<Image> images) {
         this.images = images;
+    }
+
+    public int getDesiredQuantity() {
+        return desiredQuantity;
+    }
+
+    public void setDesiredQuantity(int desiredQuantity) {
+        this.desiredQuantity = desiredQuantity;
     }
 
 
