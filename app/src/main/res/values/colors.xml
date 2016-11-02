@@ -5,5 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="list_divider">#666666</color>
     <color name="ColorPrimary">#E2001A</color>
+    <color name="ColorCustom">#E2001A</color>
     <color name="counter_text_color">#c5c4c4</color>
+    <color name="statusBarColor">#4169E1</color>
+    <color name="greeen_color">#7CAF41</color>
+    <color name="black_text_color">#222222</color>
 </resources>

@@ -18,7 +18,7 @@
     <!--android:background="#ffffff"-->
 
     <!--<include android:id="@+id/toolbar_details_item_screen"-->
-             <!--layout="@layout/tool_bar"-->
+    <!--layout="@layout/tool_bar"-->
 
     <!--&gt;</include>-->
 
@@ -28,38 +28,38 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:weightSum="4"
-            >
+    >
         <!--android:background="@color/darkBackground_black"-->
         <!--android:layout_below="@+id/toolbar_details_item_screen"-->
         <!--item image layout-->
         <!--<FrameLayout-->
-                <!--android:id="@+id/layout_item_image"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="2dp"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:layout_weight="1"-->
-                   <!--android:background="#ffffff"-->
+        <!--android:id="@+id/layout_item_image"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="#ffffff"-->
         <!--&gt;-->
-            <ProgressBar
-                    android:id="@+id/progressBar1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+        <ProgressBar
+                android:id="@+id/progressBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
 
-                    android:indeterminate="false"
-                    android:visibility="invisible"
-                    android:progress="2"
-            android:layout_gravity="center"/>
+                android:indeterminate="false"
+                android:visibility="invisible"
+                android:progress="2"
+                android:layout_gravity="center"/>
 
-            <!--style="@android:style/Widget.ProgressBar.Large"-->
-            <!--#696969-->
+        <!--style="@android:style/Widget.ProgressBar.Large"-->
+        <!--#696969-->
         <ImageView
-                    android:id="@+id/itemFullView"
-                    android:layout_width="200dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="-30dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/food"/>
+                android:id="@+id/itemFullView"
+                android:layout_width="200dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="-30dp"
+                android:layout_height="150dp"
+                android:background="@drawable/food"/>
         <include
                 layout="@layout/custom_picker"
                 android:id="@+id/myquantity_picker"
@@ -72,121 +72,134 @@
         <!-- item short_desc and item_price  layout-->
         <!--order button and details item layout-->
         <LinearLayout
-
-                android:id="@+id/layout_details_orderbutton"
-                android:layout_width="match_parent"
+                android:layout_weight="0.5"
+                android:background="#ffffff"
+                android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:orientation="vertical"
-                android:layout_weight="2"
-                android:weightSum="2">
+                android:orientation="horizontal"
+                android:id="@+id/layout_itemdetails"
+                android:weightSum="1"
+                android:gravity="center_horizontal"
+
+        >
             <TextView
-                    android:layout_width="wrap_content"
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Pizza"
                     android:id="@+id/textView_itemname"
-                    android:text="pizza"
-                    android:textAllCaps="true"
-                    android:textSize="18dp"
-                    android:textColor="#000000"
-                    android:padding="10dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentEnd="false"
+                    android:textStyle="normal"
+                    android:layout_weight="0.52"
+                    android:layout_marginLeft="15dp"
+                    android:layout_gravity="center"
+                    android:autoText="false"/>
             <TextView
-                    android:layout_width="wrap_content"
-                    android:id="@+id/textView_description"
-                    android:text="Bht umdah khanaaa ha "
-                    android:textSize="15dp"
-                    android:textColor="#000000"
-                    android:padding="10dp"
-                    android:textStyle="italic"
-                    android:layout_height="wrap_content"/>
-
-
-            <!--<RelativeLayout android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:layout_weight="0.25"-->
-            <!--&gt;</RelativeLayout>-->
-
-
-            <!--custom picker here-->
-
-            <!--Existing Quantity shown-->
-            <!--<RelativeLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_margin="15dp"-->
-                    <!--android:layout_weight="0.12">-->
-                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:text="Existing Quantity"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
-
-                        <!--&lt;!&ndash;android:id="@+id/alreaty_itemQuantity_txtview"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:textAppearance="?android:attr/textAppearanceMedium"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:textColor="@color/greeen_color"&ndash;&gt;-->
-                      <!--&lt;!&ndash;/>&ndash;&gt;-->
-
-                <!--&lt;!&ndash;total price according to quantity&ndash;&gt;-->
-                <!--&lt;!&ndash;<TextView&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:id="@+id/item_quantity_already"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:layout_gravity=""&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:textStyle="bold"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:textColor="@color/greeen_color"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:textAppearance="?android:attr/textAppearanceMedium"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:layout_alignParentRight="true"&ndash;&gt;-->
-                        <!--&lt;!&ndash;android:layout_alignParentEnd="true"&ndash;&gt;-->
-
-                <!--&lt;!&ndash;android:text="2"/>&ndash;&gt;-->
-
-            <!--</RelativeLayout>-->
-
-
-
-
-            <!--&lt;!&ndash; Total price according to quantity &ndash;&gt;-->
-            <!--<RelativeLayout-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-
-                    <!--android:layout_weight="0.12">-->
-                <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="Total Price"-->
-                        <!--android:textStyle="bold"-->
-                        <!--android:layout_margin="15dp"-->
-                        <!--android:id="@+id/total_price_txtview"-->
-                        <!--android:gravity="center"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                        <!--android:textColor="@color/black_text_color"/>-->
-
-                <!--&lt;!&ndash;total price according to quantity&ndash;&gt;-->
-                <!--<TextView-->
-                        <!--android:id="@+id/total_price"-->
-                        <!--android:layout_gravity=""-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:gravity="center"-->
-                        <!--android:textStyle="bold"-->
-                        <!--android:textColor="@color/black_text_color"-->
-                        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                        <!--android:layout_alignParentRight="true"-->
-                        <!--android:layout_alignParentEnd="true"-->
-                        <!--android:layout_margin="15dp" />-->
-
-            <!--</RelativeLayout>-->
-
-
-
-
-
-            <!--</LinearLayout>-->
-
-            <!--android:drawableLeft="@mipmap/ic_arrow"-->
+                    android:id="@+id/textView_itemPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_weight="0.30"
+                    android:background="@color/statusBarColor"
+                    android:textStyle="normal"
+                    android:text="Rs 7808.0"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+            />
+            <!--#F34545"-->
 
         </LinearLayout>
+        <!--<LinearLayout -->
+        <!--android:layout_width="0dp" -->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/textView_description"-->
+        <!--and>-->
+        <!---->
+        <!--</LinearLayout>-->
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:layout_weight="0.12">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Existing Quantity"
+                    android:textStyle="bold"
+
+                    android:id="@+id/alreaty_itemQuantity_txtview"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/greeen_color"
+            />
+
+            <!--total price according to quantity-->
+            <TextView
+                    android:id="@+id/item_quantity_already"
+                    android:layout_gravity=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/greeen_color"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+
+                    android:text="2"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="0.12">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Price"
+                    android:textStyle="bold"
+                    android:layout_margin="15dp"
+                    android:id="@+id/total_price_txtview"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black_text_color"/>
+
+            <!--total price according to quantity-->
+            <TextView
+                    android:id="@+id/total_price"
+                    android:layout_gravity=""
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/black_text_color"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="15dp" />
+
+
+            <ImageView
+                    android:id="@+id/itemMenu_cart"
+
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+
+                    android:src="@drawable/add_cart"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginLeft="140dp"
+
+                    android:listSelector="@drawable/list"
+                    android:clickable="true"
+
+                    android:background="#F1F1F1"
+                    android:padding="5dp"/>
+
+
+        </RelativeLayout>
         <!--F34545-->
     </LinearLayout>
 </RelativeLayout>

@@ -22,7 +22,9 @@ public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.MyView
 
     Context mContext;
     private List<MenusItem> menusList;
-    OnItemClickListner menuItemClickListner;
+    // OnItemClickListner WishItemClickListner;
+    OnItemClickListener menuItemClickListner;
+
 
     public WishListAdapter(Context mContext, List<MenusItem> menusList) {
         this.mContext = mContext;
@@ -97,15 +99,24 @@ public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.MyView
 
         void onItemClick(View view, int position);
     }
-
-    public void SetOnItemClickListner(final OnItemClickListner menuItemClickListner) {
-
-        this.menuItemClickListner = menuItemClickListner;
-    }
+//
+//    public void SetOnItemClickListner(final OnItemClickListner WishListener) {
+//
+//        this.menuItemClickListner = menuItemClickListner;
+//    }
 
 
     @Override
     public int getItemCount() {
         return menusList.size();
+    }
+    public interface OnItemClickListener {
+
+        void onItemClick(View view, int position);
+    }
+
+    public void SetOnItemClickListner(final OnItemClickListener menuItemClickListner) {
+
+        this.menuItemClickListner = menuItemClickListner;
     }
 }
